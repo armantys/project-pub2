@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 DATABASE_URL = (
-    f"mysql+pymysql://{os.getenv('MYSQL_USER')}:"
+    f"mysql+pymysql://{os.getenv('MYSQL_USER')}:{os.getenv('MYSQL_PASSWORD')}"
     f"@{os.getenv('MYSQL_HOST')}:{os.getenv('MYSQL_PORT')}/{os.getenv('MYSQL_DB')}"
 )
 
