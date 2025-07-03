@@ -29,30 +29,30 @@ jobs:
       MYSQL_PORT: 3306
 
     steps:
-      - name: 📥 Cloner le dépôt
+      - name:  Cloner le dépôt
         uses: actions/checkout@v3
 
-      - name: 🐍 Installer Python
+      - name:  Installer Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: 📚 Installer les dépendances
+      - name:  Installer les dépendances
         run: |
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      - name: 🧪 Lancer les tests unitaires
+      - name:  Lancer les tests unitaires
         working-directory: ./backend
         run: |
           pytest tests/
 
-      - name: 🐳 Construire l’image Docker
+      - name:  Construire l’image Docker
         run: |
           docker build -t ia-model-api:latest -f backend/Dockerfile .
 
       # Optionnel : push vers DockerHub (il te faut un secret)
-      # - name: 🐳 Pousser l’image sur DockerHub
+      # - name:  Pousser l’image sur DockerHub
       #   run: |
       #     echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       #     docker tag ia-model-api yourdockerhubuser/ia-model-api:latest
