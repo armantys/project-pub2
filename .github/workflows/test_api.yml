@@ -53,7 +53,7 @@ jobs:
 
       - name: Installer les dépendances React
         working-directory: ./project
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Lancer les tests React
         working-directory: ./project
