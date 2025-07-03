@@ -111,7 +111,7 @@ def read_root():
 
 
 # === Chargement du modèle une seule fois ===
-MODEL_PATH = r"C:\Users\LSouq\OneDrive\Documents\GitHub\ludovic.souquet.formation\Projet\project-pub2\backend\models\model_with_dropout1.h5"  # mets le bon nom ici
+MODEL_PATH = r"C:\Users\LSouq\project-pub2\backend\models\model_with_dropout1.h5"  # mets le bon nom ici
 IMG_SIZE = 100
 model = tf.keras.models.load_model(MODEL_PATH)
 
