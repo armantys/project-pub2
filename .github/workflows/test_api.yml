@@ -57,7 +57,7 @@ jobs:
 
       - name: Lancer les tests React
         working-directory: ./project
-        run: npm test -- --watchAll=false
+        run: npm run test
 
       # Optionnel : push vers DockerHub (il te faut un secret)
       # - name:  Pousser l’image sur DockerHub
