@@ -126,7 +126,7 @@ const Dashboard = () => {
             {predictions.length === 0 ? (
               <p className="text-gray-500">Aucune prédiction pour le moment.</p>
             ) : (
-              predictions.map((pred, index) => (
+              predictions.slice().reverse().map((pred, index) => (
                 <div key={index} className="border p-4 rounded">
                   <div className="flex justify-between items-center mb-2">
                     <span className={`font-semibold ${pred.label === 'PUB' ? 'text-red-600' : 'text-green-600'}`}>
