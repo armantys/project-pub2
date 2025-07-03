@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: rgb(8, 145, 178);
+  --primary-dark: rgb(6, 78, 59);
+  --secondary: rgb(20, 184, 166);
+  --accent: rgb(249, 115, 22);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom animations */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tailwind doesn't style these by default */
+input[type="file"]::file-selector-button {
+  @apply bg-gray-200 dark:bg-gray-700 border-0 text-gray-700 dark:text-gray-300 py-1 px-3 rounded mr-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, select, textarea {
+  @apply transition-all duration-200;
+}
