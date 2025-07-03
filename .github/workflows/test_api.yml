@@ -52,11 +52,11 @@ jobs:
           docker build -t ia-model-api:latest -f backend/Dockerfile .
 
       - name: Installer les dépendances React
-        working-directory: ./frontend
+        working-directory: ./project
         run: npm install
 
       - name: Lancer les tests React
-        working-directory: ./frontend
+        working-directory: ./project
         run: npm test -- --watchAll=false
 
       # Optionnel : push vers DockerHub (il te faut un secret)
