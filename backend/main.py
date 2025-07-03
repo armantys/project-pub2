@@ -23,8 +23,12 @@ import tensorflow as tf
 from pydantic import BaseModel
 import shutil
 import uuid
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+
+if os.path.isdir("image"):
+    app.mount("/image", StaticFiles(directory="image"), name="image")
 
 metrics_logger = logging.getLogger("metrics_logger")
 logging.basicConfig(level=logging.INFO)
