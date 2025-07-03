@@ -111,9 +111,9 @@ def read_root():
 
 
 # === Chargement du modèle une seule fois ===
-MODEL_PATH = r"C:\Users\LSouq\project-pub2\backend\models\model_with_dropout1.h5"  # mets le bon nom ici
+#MODEL_PATH = r"C:\Users\LSouq\project-pub2\backend\models\model_with_dropout1.h5" 
 IMG_SIZE = 100
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'models', 'model_with_dropout1.h5'))
 
 # === Schéma pour recevoir l’image encodée ===
 class ImageInput(BaseModel):
